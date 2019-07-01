@@ -4,9 +4,9 @@ services:
     image: keiichi/agurim
     build: .
     container_name: agurim
-    environment:
-      - DATASET_NAMES=dataset dataset-other
-      - DEFAULT_DATASET_NAME=dataset
+    #environment:
+    #  - DATASET_NAMES=dataset1 dataset2
+    #  - DEFAULT_DATASET_NAME=dataset1
     ports:
       - 80:80
     volumes:
