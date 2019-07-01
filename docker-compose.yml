@@ -1,0 +1,16 @@
+version: "3"
+services:
+  agurim:
+    image: keiichi/agurim
+    build: .
+    container_name: agurim
+    environment:
+      - DATASET_NAMES=dataset dataset-other
+      - DEFAULT_DATASET_NAME=dataset
+    ports:
+      - 80:80
+    volumes:
+      - ./datasets:/var/www/datasets
+    restart: always
+    logging:
+      driver: "journald"
