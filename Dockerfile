@@ -9,7 +9,7 @@ RUN /usr/bin/apt-get update \
 RUN /usr/sbin/a2enmod cgi
 
 # build aguri3 and agurim
-RUN /usr/bin/git clone https://github.com/necoma/agurim.git /agurim-master
+RUN /usr/bin/git clone -b file_parse-fix --single-branch https://github.com/keiichishima/agurim.git /agurim-master
 WORKDIR /agurim-master/src
 RUN /usr/bin/make && /usr/bin/make install
 
