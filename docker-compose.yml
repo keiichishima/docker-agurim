@@ -12,5 +12,5 @@ services:
     volumes:
       - ./datasets:/var/www/datasets
     restart: always
-    logging:
-      driver: "journald"
+    #logging:
+    #  driver: "journald"

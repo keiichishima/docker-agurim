@@ -1,0 +1,12 @@
+diff -ur agurim-master-dist/cgi-bin/common.py agurim-master/cgi-bin/common.py
+--- agurim-master-dist/cgi-bin/common.py	2019-07-09 02:43:22.000000000 +0000
++++ agurim-master/cgi-bin/common.py	2019-07-24 02:38:52.134427445 +0000
+@@ -98,7 +98,7 @@
+                         ts2 = end_time
+                         ts1 = ts2 - duration
+                 else:
+-                        now = datetime.datetime.now()
++                        now = datetime.datetime.now() - datetime.timedelta(days=7)
+                         now_ts = time.mktime(now.timetuple())
+                         ts2 = now_ts
+                         ts1 = ts2 - duration

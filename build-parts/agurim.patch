@@ -1,0 +1,32 @@
+diff -ur agurim-master-dist/cgi-bin/myagurim.cgi agurim-master/cgi-bin/myagurim.cgi
+--- agurim-master-dist/cgi-bin/myagurim.cgi	2019-07-09 02:43:22.000000000 +0000
++++ agurim-master/cgi-bin/myagurim.cgi	2019-07-24 02:38:55.950436872 +0000
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/python
++#!/usr/bin/python
+ import common
+ import subprocess
+ import shlex
+@@ -8,8 +8,8 @@
+ import sys
+ 
+ agurimcmd = "/usr/local/bin/agurim"
+-data_dir = "../"	# path to the datasets (relative from the cgi-bin page)
+-def_dsname = "dataset"	# default dsname
++data_dir = "../datasets/"	# path to the datasets (relative from the cgi-bin page)
++def_dsname = "DEFAULT_DATASET_NAME"	# default dsname
+ 
+ res = {}
+ 
+diff -ur agurim-master-dist/index.html agurim-master/index.html
+--- agurim-master-dist/index.html	2019-07-09 02:43:22.000000000 +0000
++++ agurim-master/index.html	2019-07-24 02:41:21.878797515 +0000
+@@ -116,7 +116,7 @@
+ 
+        // add datasets to the datasets menu
+        // var ourDatasets = ["dataset-1", "dataset-2"];  // specify your datasets here
+-       var ourDatasets = [];  // specify your datasets here
++       var ourDatasets = [DATASET_NAMES];  // specify your datasets here
+        for (var i = 0; i < ourDatasets.length; i++) {
+ 	   var li = "<li><a href=\"javascript:void(0)\" value=\"" + ourDatasets[i] + "\">" + ourDatasets[i] + "</a></li>";
+ 	   $("#datasets").append(li);

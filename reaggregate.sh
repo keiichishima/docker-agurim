@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker exec agurim /agurim-master/scripts/reaggregate.sh $@
+docker run --rm -v ${PWD}/datasets:/var/www/datasets keiichi/agurim /agurim-master/scripts/reaggregate.sh $@
